@@ -1,0 +1,6 @@
+.textInput__input--state-error{
+    border: solid 1px red
+}
+.textInput__error{
+    color: red
+}
