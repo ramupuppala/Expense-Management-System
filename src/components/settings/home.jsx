@@ -50,7 +50,6 @@ class Settings extends React.Component {
     }
 
     componentDidMount() {
-        this.props.budgetActions.receiveUserBudget();
         this.props.categoryActions.fetchCategories();
     }
     onChange = (event) => {

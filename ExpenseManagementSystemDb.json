@@ -2,53 +2,53 @@
   "categories": [
     {
       "id": 1,
-      "categoryName": "Grocery",
+      "categoryName": "Mobiles",
       "categoryItems": [
         {
           "id": "2",
-          "item": "Breed1234",
-          "amount": 40,
+          "item": "SAMSUNG GALAXY J1",
+          "amount": 10000,
           "expenseDate": "2019-07-09"
         },
         {
           "id": "3",
-          "item": "Breed321",
-          "amount": "401",
+          "item": "Nokia 4100",
+          "amount": "5000",
           "expenseDate": "2019-07-17"
         },
         {
           "id": 4,
-          "item": "Breed",
-          "amount": 40,
+          "item": "MI",
+          "amount": 9000,
           "expenseDate": "23/04/2019"
         },
         {
           "id": 5,
-          "item": "Breed",
-          "amount": 40,
+          "item": "Sony 3100",
+          "amount": 50000,
           "expenseDate": "23/04/2019"
         },
         {
-          "amount": "34234",
-          "item": "Apple",
+          "amount": "50000",
+          "item": "Apple I6",
           "expenseDate": "2019-07-14",
           "id": 7
         },
         {
-          "amount": "23",
-          "item": "JAM",
+          "amount": "9000",
+          "item": "Redmi",
           "expenseDate": "2019-07-17",
           "id": 8
         },
         {
-          "amount": "34",
-          "item": "Ice crem",
+          "amount": "15000",
+          "item": "Samsung prime",
           "expenseDate": "2019-07-14",
           "id": 9
         },
         {
-          "amount": "34",
-          "item": "Breed23457",
+          "amount": "25000",
+          "item": "Samsung s12",
           "expenseDate": "2019-07-24",
           "id": 10
         }
@@ -56,36 +56,36 @@
     },
     {
       "id": 2,
-      "categoryName": "Grocery22",
+      "categoryName": "TV",
       "categoryItems": [
         {
           "id": "1",
-          "item": "Breed1234455",
-          "amount": "4067",
+          "item": "Mi LED",
+          "amount": "50000",
           "expenseDate": "2019-07-26"
         },
         {
           "id": 2,
-          "item": "Breed",
-          "amount": 40,
+          "item": "SAMSUNG LED",
+          "amount": 60000,
           "expenseDate": "23/04/2019"
         },
         {
           "id": 3,
-          "item": "Breed",
-          "amount": 40,
+          "item": "TCL",
+          "amount": 39999,
           "expenseDate": "23/04/2019"
         },
         {
           "id": 4,
-          "item": "Breed",
-          "amount": 40,
+          "item": "Microma",
+          "amount": 20000,
           "expenseDate": "23/04/2019"
         },
         {
           "id": 5,
-          "item": "Breed",
-          "amount": 40,
+          "item": "LG LED",
+          "amount": 65000,
           "expenseDate": "23/04/2019"
         }
       ]
