@@ -4,7 +4,14 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 //Action imports
 import * as categoryActions from '../../store/actions/categoryAction';
+import * as budgetActions from '../../store/actions/budgetAction';
 import { Link } from 'react-router-dom';
+import CanvasJSReact from '../../assets/canvasjs.react';
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+function option(){
+
+}
 
 class Dashboard extends Component {
     constructor(props) {
@@ -26,9 +33,20 @@ class Dashboard extends Component {
         let sumItem=0;
         
         if (props.categories) {
-            
+            for (let i = 0; i < props.categories.length; i++) {
+
+                for (let j = 0; j < props.categories[i].categoryItems.length; j++) {
+                    totalAmount += parseInt(props.categories[i].categoryItems[j].amount);
+                    sumItem=totalAmount;
+                }
+                arrayCategoryItem[i]=sumItem;
+            }
+
             return {
                 categories: props.categories,
+                categoryTotalAmount: totalAmount,
+                categoryItemIndidualAmount:arrayCategoryItem,
+                budget:props.budget
             };
         }
         return null;
@@ -36,8 +54,54 @@ class Dashboard extends Component {
 
     }
     render() {
-        const { categories } = this.state;
+        const { categories, categoryTotalAmount, budget,categoryItemIndidualAmount } = this.state;
 
+        const optionsForBugdet = {
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "Budget Overview"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 75,
+                indexLabel: "#percent%",
+                percentFormatString: "#0.##",
+                toolTipContent: "{y} (#percent%)",
+                legendText: "{label}",
+				indexLabelFontSize: 16,
+				indexLabel: "{label} - {y}",
+				showInLegend: "true",
+                dataPoints: [
+                    { y: budget, label: "Total Budget" },
+                    { y: categoryTotalAmount, label: "Total Expense" }
+
+                ]
+            }]
+        }
+        const optionsForCategory = {
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "Category Overview"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 75,
+                indexLabel: "#percent%",
+                percentFormatString: "#0.##",
+                toolTipContent: "{y} (#percent%)",
+                legendText: "{label}",
+				indexLabelFontSize: 16,
+				indexLabel: "{label} - {y}",
+				showInLegend: "true",
+                dataPoints: [
+                    { y: categoryItemIndidualAmount[0], label: "" },
+                    { y: categoryItemIndidualAmount[1], label: "" }
+
+                ]
+            }]
+        }
         return (
             <React.Fragment>
                 <div className="container mt-3">
@@ -48,7 +112,9 @@ class Dashboard extends Component {
                                 <div class="card-body">
                                     <div className="row">
                                         <div className="col-sm-12">
-                                           <div>budget overview</div>
+                                            <CanvasJSChart options={optionsForBugdet}
+                                            /* onRef={ref => this.chart = ref} */
+                                            />
                                         </div>
                                         
                                     </div>
@@ -61,7 +127,9 @@ class Dashboard extends Component {
                                 <div class="card-body">
                                     <div className="row">
                                         <div className="col-sm-12">
-                                        <div>category overview</div>
+                                        <CanvasJSChart options={optionsForCategory}
+                                            /* onRef={ref => this.chart = ref} */
+                                            />
                                         </div>
                                        
                                     </div>

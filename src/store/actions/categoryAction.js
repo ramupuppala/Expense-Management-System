@@ -40,3 +40,27 @@ export function receiveUpdateCategoryy(data){
         payload:data
     }
 }
+export function fetchCreateCategory(data){
+    return {
+        type:allActions.FETCH_CREATE_CATEGORY,
+        payload:data
+    }
+}
+export function receiveCreateCategory(data){
+    return {
+        type:allActions.RECIEVE_CREATE_CATEGORY,
+        payload:data
+    }
+}
+export function fetchDeleteCategory(id){
+    return {
+        type:allActions.FETCH_DELETE_CATEGORY,
+        payload:id
+    }
+}
+export function receiveDeleteCategory(data){
+    return {
+        type:allActions.RECIEVE_DELETE_CATEGORY,
+        payload:data
+    }
+}

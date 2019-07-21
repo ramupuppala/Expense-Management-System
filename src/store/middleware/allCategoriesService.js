@@ -6,7 +6,7 @@ import * as CategoryActions from '../actions/categoryAction';
 
 import * as urlConstants           from '../utilities/configConstant'
 /**
- * Communication for frontend and backend
+ * Communication for frontend and backend(ARTICLES)
  */
 const userService = (store) => next => action => {
     next(action)
@@ -54,6 +54,17 @@ const userService = (store) => next => action => {
             const data = JSON.parse(res.text);
             console.log(data)
             // next(CategoryActions.receiveCreateUser(data))
+          })
+          .catch(err => {
+            next({ type: "FETCH_CATEGORIES_DATA_ERROR", err });
+          });
+        break;
+      case allActions.FETCH_DELETE_CATEGORY:
+        request.delete(urlConstants.url  + "/categories/"  + `${action.payload}`)
+          .then(res => {
+            // const data = JSON.parse(res.text);
+            window.location.href="/"
+            // next(CategoryActions.receiveDeleteUser(data))
           })
           .catch(err => {
             next({ type: "FETCH_CATEGORIES_DATA_ERROR", err });

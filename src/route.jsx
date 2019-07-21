@@ -6,6 +6,8 @@ import { Route, BrowserRouter } from "react-router-dom";
 // import Header                           from "./components/common/header";
 import Dashboard from './components/home/dashboard';
 import Settings from './components/settings';
+import CreateCategoryItem from './components/settings/createCategoryItem';
+import EditCategoryItem from './components/settings/editCategoryItem/editCategoryItem';
 
 import { Link } from "react-router-dom"
 
@@ -41,6 +43,8 @@ class Routes extends Component {
               <main class="col bg-faded py-3">
                 <Route exact path="/" component={Dashboard} />
                 <Route exact path="/settings" component={Settings} />
+                <Route exact path="/createItem" component={CreateCategoryItem} />
+                <Route exact path="/editItem/:category/:item" component={EditCategoryItem} />
               </main>
             </div>
           </div>

@@ -48,6 +48,15 @@ export default function userReducer(state = intialState, action) {
                 ...state,
                 categories: action.payload
             }
+        case allActions.FETCH_DELETE_CATEGORY:
+            return {
+                action
+            }
+        case allActions.RECIEVE_DELETE_CATEGORY:
+            return {
+                ...state,
+                categories: action.payload
+            }
         default:
             return state;
     }
